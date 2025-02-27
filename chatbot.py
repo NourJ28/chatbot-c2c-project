@@ -1,33 +1,16 @@
 def chatbot_response(user_input):
- 
-    user_input = user_input.lower() 
-
+    user_input = user_input.lower()
     
-    if 'hello' in user_input or 'hi' in user_input:
-        return "hello how can i  help you today?"
-    elif 'how are you' in user_input:
-        return "i'm doing well, how about you?"
+    if 'return' in user_input or 'exchange' in user_input:
+        return "I would be happy to help you with your return or exchange. Could you please provide the order number"
+    elif 'order number' in user_input:
+        return "thank you can you please tell me the item you'd like to return or exchange."
+    elif 'thank you' in user_input:
+        return "youre welcome"
     elif 'bye' in user_input:
-        return "goodbye!"
-    elif 'your name' in user_input:
-        return "i am a chatbot created by you"
+        return "Goodbye"
     else:
-        return "sorry, i didnt understand that could you try again"
+        return "Sorry, I didn't understand that?"
 
-def chat():
-    print("Chatbot: hi! type bye  to exit")
-    
-    while True:
-        user_input = input("you: ")
-
-        
-        if user_input.lower() == 'bye':
-            print("chatbot:goodby!")
-            break
-        
-        
-        response = chatbot_response(user_input)
-        print(f"Chatbot: {response}")
 if __name__ == "__main__":
-    chat()
-
+    print(chatbot_response("exchange"))
